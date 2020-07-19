@@ -23,8 +23,17 @@ class Player {
         }
 
         return batch
-
-         
-        
     }
+
+    get unusedTokens() {
+
+        //token.dropped does != true / aka. token.dropped == false
+        return this.tokens.filter(token => !token.dropped);
+    }
+
+    get activeToken() {
+        return this.unusedTokens[0];
+    }
+
+
 }

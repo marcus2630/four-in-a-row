@@ -10,15 +10,15 @@ class Token {
         const token = document.createElement('div');
 
         // Mess with game board underlay
-        document.getElementById('game-board-underlay').appendChild(div);
+        document.getElementById('game-board-underlay').appendChild(token);
         token.setAttribute('id', this.id);
         token.setAttribute('class', 'token');
-        token.style.backgroundColor(this.owner.color)
+        token.style.backgroundColor = this.owner.color;
 
     }
 
     get htmlToken() {
-        return div;
+        return document.getElementById(this.id);
     }
 }
 

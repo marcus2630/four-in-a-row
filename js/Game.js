@@ -19,7 +19,17 @@ class Game {
         return players;
     }
 
+    /** 
+     * Initializes game. 
+     */
     startGame() {
-        
+        this.board.drawHTMLBoard();
+        this.activePlayer.activeToken.drawHTMLToken();
+        this.ready = true;
+
+    }
+
+    get activePlayer() {
+        return this.players.find(player => player.active == true)
     }
 }
