@@ -6,7 +6,17 @@ class Player {
         this.active = active;
         this.tokens = this.createTokens(21);
     }
-
+    /**
+     * Check if a player has any undropped tokens left
+     * @return {Boolean} 
+     */
+    checkTokens() {
+        if(this.tokens.length > 0) {
+            return true
+        } else {
+            return false;
+        }
+    }
 
     /**
     * Creates token objects for player
