@@ -20,7 +20,7 @@ class Game {
                     this.activePlayer.activeToken.moveLeft();
                 } else if (e.key === 'ArrowRight') {
                     this.activePlayer.activeToken.moveRight(this.board.cols);
-                } else if (e.key === 'ArrowDown') {
+                } else if (e.key === 'ArrowDown' || e.key === ' ') {
                     this.playToken();
                 }
                 
@@ -101,7 +101,7 @@ class Game {
         let htmlElement = document.getElementById('game-over');
         
         htmlElement.style.display = 'block';
-        htmlElement.textContent = message;
+        htmlElement.innerHTML = message;
     }
 
      /** 
@@ -112,7 +112,7 @@ class Game {
     updateGameState(token, target){
         target.mark(token);
         if (this.checkForWin(target)) {
-            this.gameOver('We have a winner! Check <a href="https://github.com/marcus2630/four-in-a-row">Github</a> for the source.')
+            this.gameOver('We have a winner! Check <a href="https://github.com/marcus2630/four-in-a-row">Github</a> for the source.');
         } else {
             this.switchPlayers();
             if (this.activePlayer.checkTokens()) {

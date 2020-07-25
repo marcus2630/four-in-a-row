@@ -11,7 +11,7 @@ class Player {
      * @return {Boolean} 
      */
     checkTokens() {
-        if(this.tokens.length > 0) {
+        if(this.unusedTokens.length > 0) {
             return true
         } else {
             return false;
